@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend">
+    <title>Shapestarp | Display shapes in your html </title>
+    <style>
+        *{
+            font-family: "Lexend";
+        }
+        body{
+            background-color: black;
+            margin: 30px;
+            color: white;
+        }
+
+        .tabbtns{
+            display: flex;
+            margin: 0;
+            border: 2px solid red;
+        }
+
+        .tabbtn{
+            font-size: 20px;
+            padding: 10px;
+            cursor:  pointer;
+        }
+
+        #tbb1{
+            background-color: white;
+            color: red;
+        }  
+        
+        #tab2{
+            display: none;
+        }
+
+        .tab{
+            margin-left: 10px;
+        }
+
+        pre{
+            line-height: 24px;
+        }
+
+        .code{
+            background-color: white;
+            padding: 10px;
+            color: black;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 20px;
+            font-family: "Consolas";
+        }
+
+        a{
+            text-decoration: none;
+            color: #8f33ff;
+        }
+
+        table *{
+            font-size: 20px;
+        }
+
+        table{
+            background-color: white;
+        }
+
+        td{
+            background-color: black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shapestarp</h1>    
+    <div class="tabbtns">
+        <div class="tabbtn" onclick="opentab(1)" id="tbb1">HTML syntaxes</div>
+        <div class="tabbtn" onclick="opentab(2)" id="tbb2">Downloads</div>
+    </div>
+    <div id="tab1" class="tab">
+        <h1>HTML syntaxes</h1>
+        <pre>
+If you want to use Shapestarp1 in your HTML,
+put the below code in the head section of your html code:
+<div class="code" id="code1"></div>
+
+If you want to use Shapestarp2 in your HTML,
+put the below code in the head section of your html code:
+<div class="code" id="code2"></div>
+        </pre>
+    </div>
+    <div id="tab2" class="tab">
+        <h1>Downloads</h1>
+        <pre>
+Please download any version you want from the below table
+<b>Note:</b> We will keep these versions updating and we will also create new versions
+        </pre>
+        <table>
+            <tr>
+                <td>Shapestarp1</td>
+                <td><a href="https://kishandharan.github.io/Shapestarp/Shapestarp.css" download>Download</a></td>
+            </tr>
+            <tr>
+                <td>Shapestarp2</td>
+                <td><a href="https://kishandharan.github.io/Shapestarp/Shapestarp2.css" download>Download</a></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let code1 = `<link rel="stylesheet" href="https://kishandharan.github.io/Shapestarp/Shapestarp.css">`;
+        let code2 = `<link rel="stylesheet" href="https://kishandharan.github.io/Shapestarp/Shapestarp2.css">`;
+        document.getElementById("code1").textContent = code1;
+        document.getElementById("code2").textContent = code2;
+        function opentab(num){
+            let tbb1 = document.getElementById("tbb1");
+            let tbb2 = document.getElementById("tbb2");
+            let tab1 = document.getElementById("tab1");
+            let tab2 = document.getElementById("tab2");
+            switch(num){
+                case 1:
+                    tbb1.style.backgroundColor = "white";
+                    tbb1.style.color = "red";
+                    tbb2.style.backgroundColor = "black";
+                    tbb2.style.color = "white";
+                    tab1.style.display = "block";
+                    tab2.style.display = "none";
+                break;
+                case 2:
+                    tbb1.style.backgroundColor = "black";
+                    tbb1.style.color = "white";
+                    tbb2.style.backgroundColor = "white";
+                    tbb2.style.color = "red";
+                    tab1.style.display = "none";
+                    tab2.style.display = "block";    
+                break;
+            }
+        }
+    </script>
+</body>
+</html>
